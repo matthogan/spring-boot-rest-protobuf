@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: spring-boot-rest-protobuf
+server:
+  port: 8080
+management:
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    prometheus:
+      enabled: true
+    logfile:
+      enabled: true
+  endpoints:
+    enabled-by-default: false
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - default
+        - development
+debug: true
+management:
+  endpoint:
+    logfile:
+      enabled: true
+  endpoints:
+    enabled-by-default: true
